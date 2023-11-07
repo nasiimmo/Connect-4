@@ -40,76 +40,236 @@ function createGrid() {
     cells.push(cell)
   }
 }
-function currentCell(index) {
+
+function currentCell() {
   console.log('hi')
 }
-//get all 7 columns, based on what index i pressed i need to know what column i selected and how do i get the id based on what imdex i clicked on top row.
+//Get all 7 columns, based on what index i pressed i need to know what column i selected and how do i get the id based on what imdex i clicked on top row. whatever i do for column 0 i will repeat for all 7 columns
+
 const colZero = document.querySelectorAll('.col-0')
+//This block of code sets up an event listener for each cell in the first column ('col-0'). It listens for a click on any of these cells.
 colZero.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 0,ID: ${columnIndex}`)
+    if (columnIndex === 0) {
+      const cellsInColumn = document.querySelectorAll('.col-0')
+      let targetCell = null
+      // Iterate from the bottom to the top in "column 0"
+      //I set up a loop to iterate over the cells in "col-0" from the bottom (last cell) to the top (first cell).
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          // Found an available space, add a class to the cell (e.g., 'occupied')
+          targetCell = cellsInColumn[i]
+          //This code shows that the space is now taken
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          // Toggle the current player for the next move
+          //After each move, we toggle the currentPlayer between 1 and 2, ensuring that it switches to the other player's turn for the next move.
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break // Exit the loop after adding the class to the first available space, this prevents marking multiple cells in a single move.
+        }
+      }
+    }
   })
 })
+
+//repeated for all 7 columns
+
+
+
 const colOne = document.querySelectorAll('.col-1')
 colOne.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 1,ID: ${columnIndex}`)
+    if (columnIndex === 1) {
+      const cellsInColumn = document.querySelectorAll('.col-1')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
+
+
+
+
 const colTwo = document.querySelectorAll('.col-2')
 colTwo.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 2,ID: ${columnIndex}`)
+    if (columnIndex === 2) {
+      const cellsInColumn = document.querySelectorAll('.col-2')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
+
+
+
+
 const colThree = document.querySelectorAll('.col-3')
 colThree.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 3,ID: ${columnIndex}`)
+    if (columnIndex === 3) {
+      const cellsInColumn = document.querySelectorAll('.col-3')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
+
+
+
+
 const colFour = document.querySelectorAll('.col-4')
 colFour.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 4,ID: ${columnIndex}`)
+    if (columnIndex === 4) {
+      const cellsInColumn = document.querySelectorAll('.col-4')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
+
+
+
+
 const colFive = document.querySelectorAll('.col-5')
 colFive.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 5,ID: ${columnIndex}`)
+    if (columnIndex === 5) {
+      const cellsInColumn = document.querySelectorAll('.col-5')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
+
+
+
 const colSix = document.querySelectorAll('.col-6')
 colSix.forEach((element) => {
   element.addEventListener('click', () => {
     const columnIndex = parseInt(element.innerText)
     console.log(`clicked on column 6,ID: ${columnIndex}`)
+    if (columnIndex === 6) {
+      const cellsInColumn = document.querySelectorAll('.col-6')
+      let targetCell = null
+      for (let i = cellsInColumn.length - 1; i >= 0; i--) {
+        if (!cellsInColumn[i].classList.contains('occupied')) {
+          targetCell = cellsInColumn[i]
+          targetCell.classList.add('occupied')
+          console.log(`Added class to cell ID: ${targetCell.id}`)
+          if (currentPlayer === 1) {
+            targetCell.style.backgroundColor = 'yellow'
+          } else {
+            targetCell.style.backgroundColor = 'red'
+          }
+          currentPlayer = currentPlayer === 1 ? 2 : 1
+          break 
+        }
+      }
+    }
   })
 })
 
-//review lessons about: for loops 
-//if top row is clicked add class to next available space from down up
-//does it have color class already if it doesnt add class if it doesnt check next array
 
-//Add event listeners to the top row cells in the columns
 
-//how will i know what column i clicked on
+//Review lessons about: for loops 
+
+
+//How will i know what column i clicked on
 
 // Listen for clicks on the grid cells.
 // When a cell is clicked, find an available space in that column
 // Add the current player's color to the first available empty cell in the column.
-// Check for a win condition.
-// make a function to check for a win - diagnally aswell
+
+// * Check for a win condition.
+// Make a function to check for a win - diagnally aswell
+
 // - If no win, draw, or game-over, toggle to the next player for their turn.
-//if the board is full
-//print "Its a draw"
+//If the board is full
+//Print "Its a draw"
 
 
 // How will the board know where to find an available space in a column
