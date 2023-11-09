@@ -80,4 +80,8 @@ button:hover {
   margin: 0.5px;
   border: 3px solid navy;
 }
+footer p {
+  margin: 40px;
+  font-size: 10px
+}
 
